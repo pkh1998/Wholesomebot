@@ -36,7 +36,7 @@ public class MessageReceivedListener extends ListenerAdapter {
 
         if(m.find()){
             // if message is a variation of 'i love you wholesomebot'
-            if (msg.matches("i\\s+l+o+v+e+\\s+yo+u+(?!\\n|\\r)")) {
+            if (msg.matches("i\\s+l+o+v+e+\\s+yo+u+(?!\\n|\\r) (wholesomebot|<@380542695556251650>|wholesome)")) {
                 channel.sendMessage("i love you too " + "<@" + event.getAuthor().getId() + "> :kissing_heart: ").queue();
             }
 
