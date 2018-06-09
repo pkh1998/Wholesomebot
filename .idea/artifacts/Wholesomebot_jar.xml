@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Wholesomebot:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Wholesomebot_jar</output-path>
+    <root id="archive" name="Wholesomebot.jar">
+      <element id="module-output" name="Wholesomebot" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/JDA-3.6.0_354-withDependencies.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/commons-lang3-3.7.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

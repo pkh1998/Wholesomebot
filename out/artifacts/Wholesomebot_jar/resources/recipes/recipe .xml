@@ -1,0 +1,46 @@
+<!-- Structure of a recipe -->
+<recipe>
+    <!-- Name of the dish -->
+    <dishName>noodle spaghetti</dishName>
+    
+    <!-- description of the recipe -->
+    <description>
+        it tasty and gud 4 u
+    </description>
+    
+    <!-- The number of people this dish serves -->
+    <yield>4-500 serves/people</yield>
+    
+    <!-- the ingredients needed for the dish -->
+    <ingredientList>
+        <!-- for an individual ingredient, there can be many of these. Price tag is optional, if you dont know the price or cant be bothered to look it up, dont worry about it -->
+        <ingredient price="5.99">noodles</ingredient>
+        <ingredient price="">spahgetti stuff</ingredient>
+    </ingredientList>
+
+    <!-- The equipment needed. This is optional, maybe just state anything that is 100% needed like x size pan or something -->
+    <equipment>
+        <!-- An item of equipment, camn have multiple of these tags -->
+        <item>wooden spoon (especially if you go for eels or knights)</item>
+        <item>pot (metal one, not drug)</item>
+        <item>fork</item>
+    </equipment>
+
+    <!-- The method to create the recipe -->
+    <method>
+        <!-- Each step in the method, can have multiple of these, one for each step, eg. preheat oven to x degrees. step number is optional, dont have to use it if you dont want to -->
+        <step stepNumber="1">fill pot 3/4 full and put on to boil</step>
+        <step stepNumber="2">once put boiled, put in the noods and spahgetts</step>
+        <step stepNumber="3">wait for cooked</step>
+        <step stepNumber="4">ya done, congrats</step>
+    </method>
+
+    <!-- any additional notes you want to add about the recipe, eg. extra tips or things you could add/do to it -->
+    <additionalNotes>
+        <!-- note tag for each individual note -->
+        <note>add salt when cooking noods and spahgetts to make them better</note>
+        <note>dont screw shit ups</note>
+    </additionalNotes>
+</recipe>
+<!-- fin -->
+<!-- this is just an idea of a template, not sure if there is still some more stuff to add or improvements to be made -->
