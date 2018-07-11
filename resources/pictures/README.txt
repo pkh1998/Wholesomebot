@@ -1,0 +1,1 @@
+Place any wholesome images you would like to use in this folder :)
