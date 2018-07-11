@@ -28,6 +28,12 @@ These are all the current commands available for wholesomebot, the default prefi
 
 ## Daily Messages
 
-## How to Install
+## Setting Up Wholesomebot
 
-## Configuring Wholesomebot
+### Downloading & Installing
+
+#### Windows
+
+#### Linux
+
+### Configuring Wholesomebot
