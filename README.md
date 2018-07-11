@@ -15,3 +15,19 @@ These are all the current commands available for wholesomebot, the default prefi
 |wholesomeimg|Sends a wholesome image (make sure you add pictures in the resources/pictures file).|
 |wholesome|Sends a random wholesome message.|
 |nerdstats|Displays a bunch of info about wholesomebot and the system its running on.|
+
+## Other Non-Command Things
+
+
+## Planned Features
+* tips on how to be more environmental and care for the environment
+
+## Pictures
+
+## Wholesome Messages
+
+## Daily Messages
+
+## How to Install
+
+## Configuring Wholesomebot
