@@ -1,6 +1,6 @@
 # Wholesomebot
 WholesomeBot is a discord bot designed to spread happiness and wholesomeness.
-[Commands](#Linux)
+[Commands](#linux)
 
 ## Commands
 These are all the current commands available for wholesomebot, the default prefix is ! but can be changed to whatever you'd like.
@@ -35,6 +35,6 @@ These are all the current commands available for wholesomebot, the default prefi
 
 #### Windows
 
-#### [Linux]
+#### Linux
 
 ### Configuring Wholesomebot
