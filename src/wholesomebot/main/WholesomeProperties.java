@@ -1,12 +1,12 @@
 package wholesomebot.main;
 
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.Properties;
 
 public class WholesomeProperties {
 
     private static Properties saveProperties = getProperties("resources/savedData.properties"), configProperties = getProperties("resources/config.properties");
+    private static OutputStream out;
 
     private static Properties getProperties(String path){
         Properties prop = new Properties();
@@ -19,11 +19,6 @@ public class WholesomeProperties {
         return prop;
     }
 
-    public static void reloadProperties(){
-        saveProperties = getProperties("resources/savedData.properties");
-        configProperties = getProperties("resources/config.properties");
-    }
-
     public static String getSaveData(String key){
         return saveProperties.getProperty(key);
     }
@@ -34,9 +29,25 @@ public class WholesomeProperties {
 
     public static void setSaveProperties(String key, String value) {
         saveProperties.setProperty(key, value);
+        try{
+            out = new FileOutputStream(new File("resources/savedData.properties"));
+            configProperties.store(out,"Changed Property");
+        }catch(IOException e){
+            e.printStackTrace();
+        }
     }
 
     public static void setConfigProperties(String key, String value){
         configProperties.setProperty(key, value);
+        try{
+            out = new FileOutputStream(new File("resources/config.properties"));
+            configProperties.store(out,"Changed Property");
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    public static String getPrefix(){
+        return configProperties.getProperty("prefix");
     }
 }

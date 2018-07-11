@@ -4,6 +4,8 @@ import net.dv8tion.jda.core.entities.ChannelType;
 import net.dv8tion.jda.core.entities.MessageChannel;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
+import wholesomebot.handlers.CommandHandler;
+import wholesomebot.handlers.MessageHandler;
 import wholesomebot.main.ResponseMessages;
 import wholesomebot.main.WholesomeProperties;
 import java.text.DateFormat;
@@ -17,6 +19,8 @@ public class MessageReceivedListener extends ListenerAdapter {
 
     private Random random = new Random();
     private DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+    private CommandHandler commandHandler = new CommandHandler();
+    private MessageHandler messageHandler = new MessageHandler();
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
@@ -24,16 +28,17 @@ public class MessageReceivedListener extends ListenerAdapter {
         String msg = event.getMessage().getContentDisplay().toLowerCase();
 
         //Logging the message
-        String type;
-        if(event.getMessage().isFromType(ChannelType.PRIVATE))
-            type = "Pri";
-        else
-            type = "Pub";
+        System.out.println(dateFormat.format(new Date()) + " - " + (event.getMessage().isFromType(ChannelType.PRIVATE) ? "Pri" : "Pub") + " - " + event.getAuthor().getName() + ": " + event.getMessage().getContentDisplay());
 
-        System.out.println(dateFormat.format(new Date()) + " - " + type + " - " + event.getAuthor().getName() + ": " + event.getMessage().getContentDisplay());
-
-        if(event.getAuthor().isBot() || msg.startsWith("!"))
+        if(event.getAuthor().isBot()){
             return;
+        }
+        else if(msg.startsWith("!")){
+            commandHandler.handleCommand(event);
+        }
+        else{
+            messageHandler.handleMessage(event);
+        }
 
         Pattern p = Pattern.compile("wholesomebot|<@380542695556251650>|wholesome");
         Matcher m = p.matcher(msg);
@@ -44,7 +49,7 @@ public class MessageReceivedListener extends ListenerAdapter {
                 channel.sendMessage("i love you too " + "<@" + event.getAuthor().getId() + "> :kissing_heart: ").queue();
             }
 
-            //if a user says a varitaion of 'i love you too wholesomebot'
+            //if a user says a variation of 'i love you too wholesomebot'
             else if (msg.matches("i love you (to|too) (wholesomebot|<@380542695556251650>|wholesome)")) {
                 channel.sendMessage(":heart: ").queue();
             }
@@ -89,10 +94,6 @@ public class MessageReceivedListener extends ListenerAdapter {
                 channel.sendMessage(ResponseMessages.getWhatAreYouDoingReplies()[random.nextInt(ResponseMessages.getWhatAreYouDoingReplies().length)]).queue();
             }
 
-            else if (msg.matches("(do)? you have a crush (on anyone)?\\s* (wholesomebot|<@380542695556251650>|wholesome)")) {
-                channel.sendMessage("I might....\n but i cant\'t tell you because its a secret :wink: ").queue();
-            }
-
             else if (msg.matches("(do)? (you|u) believe in love (wholesomebot|<@380542695556251650>|wholesome)")) {
                 channel.sendMessage("Of course i do! There\'s a perfect match for everyone in this world, whether you know it or not :blush: ").queue();
             }
@@ -102,7 +103,7 @@ public class MessageReceivedListener extends ListenerAdapter {
             }
 
             else if (msg.matches("who do (you|u) love (wholesomebot|<@380542695556251650>|wholesome)")) {
-                channel.sendMessage("I love lots of people :blush:  But most of all i love my programmer and those that he loves most, I wouldn't be here without them :hearts: ").queue();
+                channel.sendMessage("I love lots of people :blush:  But most of all i love my programmer :wink:, I wouldn't be here without him").queue();
             }
 
             else if (msg.matches("are (you|u) (an|a) (ai|AI|a.i.|A.I.) (wholesomebot|<@380542695556251650>|wholesome)")) {
@@ -135,7 +136,7 @@ public class MessageReceivedListener extends ListenerAdapter {
 
             else if (msg.matches("(good)?\\s*(morning|mornin) (wholesomebot|<@380542695556251650>|wholesome)")) {
                 if(WholesomeProperties.getSaveData("prevGoodMorningUser").equals(event.getAuthor().getId()))
-                    channel.sendMessage("Good morning :blush: How was your sleep?").queue();
+                    channel.sendMessage("Good morning :blush:").queue();
             }
 
             else if (msg.matches("(good)?\\s*(evening|afternoon) (wholesomebot|<@380542695556251650>|wholesome)")) {
@@ -151,19 +152,12 @@ public class MessageReceivedListener extends ListenerAdapter {
             }
 
             else if (msg.matches("who is (your|ur) (fav|favorite|favourite) (peep|person|human|friend) (wholesomebot|<@380542695556251650>|wholesome)")) {
-
-                if(event.getAuthor().getId().equals("327731045653020673"))
-                    event.getAuthor().openPrivateChannel().queue((user) -> user.sendMessage("You\'re my favourite person :blush: :kissing_heart: ").queue());
-
                 channel.sendMessage("I don\'t tend to have favourites haha, i love most people equally :blush: (ok maybe my programmer is my favourite, but i guess its obvious why :yum: )").queue();
             }
 
             else if (msg.matches("do (you|u) love me (wholesomebot|<@380542695556251650>|wholesome)")) {
 
-                if(event.getAuthor().getId().equals("327731045653020673"))
-                    event.getAuthor().openPrivateChannel().queue((user) -> user.sendMessage("I love you heaps " + event.getAuthor().getName() + " :kissing_heart: ").queue());
-
-                channel.sendMessage("Maybe :wink: ").queue();
+                channel.sendMessage("¯\\_(ツ)_/¯").queue();
             }
 
             /*

@@ -1,0 +1,105 @@
+<dish>
+    <recipe cmd="buddhabowl">
+        <dishName>Buddha Bowl</dishName>
+
+        <description></description>
+
+        <yield></yield>
+
+        <ingredientList>
+            <ingredient>1 Sweet Potato</ingredient>
+            <ingredient>1 Broccoli Tree</ingredient>
+            <ingredient>1 Avocado</ingredient>
+            <ingredient>1 Cup of Quinoa *OR* brown rice</ingredient>
+            <ingredient>1 Can of mixed beans (chickpeas, kidney beans and black beans)</ingredient>
+            <ingredient>1 Can of diced tomato in juices</ingredient>
+            <ingredient>1 Onion diced</ingredient>
+            <ingredient>1 tbsp of Parsley</ingredient>
+            <ingredient>1 tsp/ 1 clove of Garlic (dried or fresh diced up</ingredient>
+            <ingredient>2 tbsp of butter</ingredient>
+            <ingredient>2 tbsp of brown sugar</ingredient>
+            <ingredient>Salt &amp; Pepper</ingredient>
+        </ingredientList>
+
+        <equipment>
+            <item>2 Stove pots</item>
+            <item>Fry pan</item>
+            <item>Cutting board</item>
+            <item>Knives</item>
+            <item>Drainer</item>
+            <item>Measuring spoons</item>
+            <item>Bowl</item>
+        </equipment>
+
+        <method>
+            <step>Cut up your onion in little dices for later, set aside.</step>
+            <step></step>
+            <step></step>
+            <step></step>
+            <step></step>
+            <step></step>
+            <step></step>
+            <step></step>
+            <step></step>
+        </method>
+
+        <additionalNotes>
+            <note></note>
+            <note></note>
+        </additionalNotes>
+    </recipe>
+
+    <recipe cmd="bssmoothiebowl">
+        <dishName>Banana &amp; Strawberry Smoothie Bowl</dishName>
+        <description></description>
+        <yield></yield>
+
+        <ingredientList>
+            <ingredient>2 frozen cut up bananas</ingredient>
+            <ingredient>5 frozen strawberries</ingredient>
+            <ingredient>1 tsp of vanilla protein powder (optional)</ingredient>
+            <ingredient>2 ice cubes</ingredient>
+            <ingredient>½ cup of almond milk</ingredient>
+            <ingredient>Chia seeds</ingredient>
+            <ingredient>Extra sliced berries (strawberries and raspberries are great)</ingredient>
+            <ingredient>Granola</ingredient>
+            <ingredient>Strawberry jam</ingredient>
+            <ingredient>Sliced banana</ingredient>
+        </ingredientList>
+
+        <equipment>
+            <item>Chopping board</item>
+            <item>Knives</item>
+            <item>Blender</item>
+            <item>Bowl</item>
+            <item>Measuring spoons &amp; cup</item>
+        </equipment>
+
+        <method>
+            <step></step>
+        </method>
+        <additionalNotes>
+
+        </additionalNotes>
+    </recipe>
+</dish>
+
+<!--
+<dish cmd="">
+    <dishName></dishName>
+    <description></description>
+    <yield></yield>
+    <ingredientList>
+        <ingredient></ingredient>
+    </ingredientList>
+    <equipment>
+        <item></item>
+    </equipment>
+    <method>
+        <step></step>
+    </method>
+    <additionalNotes>
+        <note></note>
+    </additionalNotes>
+</dish>
+-->

@@ -1,14 +1,9 @@
 package wholesomebot.commands;
 
-import net.dv8tion.jda.core.hooks.ListenerAdapter;
-import wholesomebot.main.WholesomeProperties;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 
-public class Command extends ListenerAdapter{
+public abstract class Command{
+    public abstract String description();
+    public abstract void sendMessage(MessageReceivedEvent event);
 
-    protected static String prefix = WholesomeProperties.getConfigData("prefix");
-
-    public void setPrefix(String prefix){
-        Command.prefix = prefix;
-        WholesomeProperties.setConfigProperties("prefix", prefix);
-    }
 }

@@ -14,6 +14,8 @@ import java.util.*;
 public class WholesomeBot {
     public static JDA jda;
     private Timer timer = new Timer();
+    private GoodMorningMsg goodMorningMsg;
+    public HashMap<String, Command> commands;
 
     public static void main(String[] args){
         WholesomeBot intFace = new WholesomeBot();
@@ -27,16 +29,7 @@ public class WholesomeBot {
         bot.setAutoReconnect(true);
 
         bot.addEventListener(new ReadyListener(),
-                new WholesomeMsgcmd(),
-                new ComplimentMsgcmd(),
-                new CheerUpMsgcmd(),
-                new Quotecmd(),
                 new GuildJoinListener(),
-                new WholesomeImgcmd(),
-                new Statscmd(),
-                new Helpcmd(),
-                new Choosecmd(),
-                new PrivateMessageReceivedListener(),
                 new MessageReceivedListener()
         );
 
@@ -46,6 +39,7 @@ public class WholesomeBot {
             e.printStackTrace();
         }
         jda.getPresence().setGame(Game.playing(ResponseMessages.getPresence()[new Random().nextInt(ResponseMessages.getPresence().length)]));
+        goodMorningMsg = new GoodMorningMsg();
 
         timer.schedule(new TimerTask() {
             @Override
@@ -54,12 +48,12 @@ public class WholesomeBot {
                 String date = dateFormat.format(new Date());
 
                 if(date.equals(WholesomeProperties.getConfigData("goodMorningMsgTime"))){
-                    System.out.println("Attempting to send daily good morning message...");
-                    new GoodMorningMsg();
+                    System.out.println("LOG: Sending daily good morning message...");
+                    goodMorningMsg.sendMessage();
                 }
 
                 if(date.equals(WholesomeProperties.getConfigData("wholesomeMsgTime"))){
-                    System.out.println("Attempting to send daily wholesome message...");
+                    System.out.println("LOG: Sending daily wholesome message...");
                     new DailyWholesomeMsg();
                 }
 
