@@ -6,5 +6,12 @@ These are all the current commands available for wholesomebot, the default prefi
 
 |Commnd [args]|Description|
 | --- | --- |
-|help|Displays all commands and what they do|
-|Choose [args \| to \| choose] | wholeosmebot will randomly choose one of the options you provide split using | eg. !choose yes | no | maybe
+|help|Displays all commands and what they do.|
+|Choose [args \| to \| choose] | wholeosmebot will randomly choose one of the options you provide split using \| eg. !choose yes \| no \| maybe.|
+|compliment|Sends a compliment to the user.|
+|cheermeup|Sends a message to try help cheer up the user.|
+|quote|Sends a random inspirational quote.|
+|recipe|Displays all the recipe commands and descriptions that are in the recipe.xml.|
+|wholesomeimg|Sends a wholesome image (make sure you add pictures in the resources/pictures file).|
+|wholesome|Sends a random wholesome message.|
+|nerdstats|Displays a bunch of info about wholesomebot and the system its running on.|
