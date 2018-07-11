@@ -1,3 +1,5 @@
+[Download Wholesomebot](https://github.com/basion96/Wholesomebot/releases/download/v1.0/Wholesomebot.jar)
+
 # Wholesomebot
 WholesomeBot is a discord bot designed to spread happiness and wholesomeness.
 
