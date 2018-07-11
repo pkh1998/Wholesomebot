@@ -35,6 +35,6 @@ These are all the current commands available for wholesomebot, the default prefi
 
 #### Windows
 
-#### Linux
+#### [Linux]
 
 ### Configuring Wholesomebot
