@@ -1,6 +1,15 @@
 # Wholesomebot
 WholesomeBot is a discord bot designed to spread happiness and wholesomeness.
 
+## Table of Contents
+* [Commands](#commands)
+* [Non-command things](#other-non-command-things)
+* [Planned features](#planned-features)
+* [Pictures](#pictures)
+* [Wholesome messages](#wholesome-messages)
+* [Daily messages](#daily-messages)
+* [Setting up Wholesomebot](#setting-up-wholesomebot)
+
 ## Commands
 These are all the current commands available for wholesomebot, the default prefix is ! but can be changed to whatever you'd like.
 
