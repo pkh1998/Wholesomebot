@@ -5,7 +5,7 @@
 libs/
 out/
 .idea/
-
+resources/pictures/
 
 # iml file
 *.iml
