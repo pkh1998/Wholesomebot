@@ -7,4 +7,4 @@ These are all the current commands available for wholesomebot, the default prefi
 |Commnd [args]|Description|
 | --- | --- |
 |help|Displays all commands and what they do|
-|Choose [args | to | choose] | wholeosmebot will randomly choose one of the options you provide split using | eg. !choose yes | no | maybe
+|Choose [args \| to \| choose] | wholeosmebot will randomly choose one of the options you provide split using | eg. !choose yes | no | maybe
