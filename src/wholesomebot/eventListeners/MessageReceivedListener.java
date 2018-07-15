@@ -24,6 +24,7 @@ public class MessageReceivedListener extends ListenerAdapter {
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
+
         MessageChannel channel = event.getChannel();
         String msg = event.getMessage().getContentDisplay().toLowerCase();
 
@@ -39,53 +40,14 @@ public class MessageReceivedListener extends ListenerAdapter {
         else{
             messageHandler.handleMessage(event);
         }
-
+//----------------------------------------------------------------------------------------------------------
         Pattern p = Pattern.compile("wholesomebot|<@380542695556251650>|wholesome");
         Matcher m = p.matcher(msg);
 
         if(m.find()){
-            // if message is a variation of 'i love you wholesomebot'
-            if (msg.matches("i\\s+l+o+v+e+\\s+yo+u+(?!\\n|\\r) (wholesomebot|<@380542695556251650>|wholesome)")) {
-                channel.sendMessage("i love you too " + "<@" + event.getAuthor().getId() + "> :kissing_heart: ").queue();
-            }
-
-            //if a user says a variation of 'i love you too wholesomebot'
-            else if (msg.matches("i love you (to|too) (wholesomebot|<@380542695556251650>|wholesome)")) {
-                channel.sendMessage(":heart: ").queue();
-            }
-
-            // if message is a variation of 'thank you wholesomebot'
-            else if (msg.matches("(thanks|thank you|thankyou)(?!\\n|\\r)\\s+(wholesomebot|<@380542695556251650>|wholesome)")) {
-                channel.sendMessage(ResponseMessages.getYourWelcomes()[random.nextInt(ResponseMessages.getYourWelcomes().length)]).queue();
-            }
-
-            // if message is a variation of 'how are you wholesomebot'
-            else if (msg.matches("(how are|how're)\\s+you\\s+((doing|today)\\s+)*(wholesomebot|<@380542695556251650>|wholesome)")) {
-                channel.sendMessage(ResponseMessages.getHowAreYouReplies()[random.nextInt(ResponseMessages.getHowAreYouReplies().length)]).queue();
-            }
-
-            // if message contains certain swear words
-            else if (msg.matches("(fuck|cunt)")) {
-                channel.sendMessage("Please watch your language :upside_down:").queue();
-            }
-
-            // if message is a variation of 'hey wholesomebot'
-            else if (msg.matches("(hey|hi|hello|whats up|what's up|heyo) (wholesomebot|<@380542695556251650>|wholesome)")) {
-                channel.sendMessage("Hey " + event.getAuthor().getName()).queue();
-            }
-
-            // if message is a variation of 'ty wholesomebot'
-            else if (msg.matches("ty (wholesomebot|<@380542695556251650>|wholesome)")) {
-                channel.sendMessage("np bby :kissing_heart:").queue();
-            }
-
-            // if message is 'SPOOK' or 'SPOOK!'
-            else if (msg.matches("(SPOOK|SPOOK!)")) {
-                channel.sendMessage("AHH! Spooked again... :sweat_smile: ").queue();
-            }
 
             // if message is a variation of 'how do you work wholesomebot'
-            else if (msg.matches("how (exactly\\s+)?do you work (wholesomebot|<@380542695556251650>|wholesome)")) {
+            if (msg.matches("how (exactly\\s+)?do you work (wholesomebot|<@380542695556251650>|wholesome)")) {
                 channel.sendMessage(ResponseMessages.getHowDoYouWorkReplies()[random.nextInt(ResponseMessages.getHowDoYouWorkReplies().length)]).queue();
             }
 
@@ -135,7 +97,7 @@ public class MessageReceivedListener extends ListenerAdapter {
             }
 
             else if (msg.matches("(good)?\\s*(morning|mornin) (wholesomebot|<@380542695556251650>|wholesome)")) {
-                if(WholesomeProperties.getSaveData("prevGoodMorningUser").equals(event.getAuthor().getId()))
+                if(WholesomeProperties.getPreviousGoodMorningUser().equals(event.getAuthor().getId()))
                     channel.sendMessage("Good morning :blush:").queue();
             }
 

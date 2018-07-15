@@ -5,7 +5,7 @@ import wholesomebot.commands.*;
 
 import java.util.HashMap;
 
-public class CommandHandler {
+public final class CommandHandler {
 
     private static HashMap<String, Command> commands;
 
@@ -20,6 +20,7 @@ public class CommandHandler {
         commands.put("recipe", new Recipe());
         commands.put("wholesomeimg", new WholesomeImage());
         commands.put("wholesome", new WholesomeMessage());
+        commands.put("prefix", new ChangePrefix());
     }
 
     public void handleCommand(MessageReceivedEvent event){
@@ -28,6 +29,9 @@ public class CommandHandler {
 
         if(commands.containsKey(command)){
             commands.get(command).sendMessage(event);
+        }
+        else{
+            event.getChannel().sendMessage("Sorry, i cant seem to find that command :confused: ").queue();
         }
     }
 

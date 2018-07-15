@@ -15,7 +15,7 @@ public class GoodMorningMsg {
     private static boolean newMember;
 
     public GoodMorningMsg(){
-        channel = WholesomeBot.jda.getTextChannelById(WholesomeProperties.getConfigData("publicChannel"));
+        channel = WholesomeBot.jda.getTextChannelById(WholesomeProperties.getPublicChannel());
         guild = channel.getGuild();
         newMember = false;
         messagedUsers = new ArrayList<>();
@@ -44,7 +44,7 @@ public class GoodMorningMsg {
             user = members.get(new Random().nextInt(members.size())).getUser().getId();
         }while(hasBeenMessaged(user) || user.equals(WholesomeBot.jda.getSelfUser().getId()));
 
-        WholesomeProperties.setSaveProperties("prevGoodMorningUser", user);
+        WholesomeProperties.saveMorningMessageUser(user);
 
         channel.sendMessage("Good morning <@" + user + ">, have a great day today :blush:").queue();
     }

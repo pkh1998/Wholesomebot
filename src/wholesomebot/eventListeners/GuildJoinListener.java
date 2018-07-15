@@ -9,7 +9,7 @@ import wholesomebot.main.WholesomeProperties;
 public class GuildJoinListener extends ListenerAdapter {
 
     public void onGuildMemberJoin(GuildMemberJoinEvent event){
-        TextChannel channel = event.getJDA().getTextChannelById(WholesomeProperties.getConfigData("welcomeChannel"));
+        TextChannel channel = event.getJDA().getTextChannelById(WholesomeProperties.getWelcomeChannel());
         channel.sendMessage("hey there " + event.getMember().getAsMention() + ", Welcome to Good Vibes Only :blush:").queue();
         GoodMorningMsg.newMember();
     }

@@ -25,7 +25,7 @@ public class WholesomeBot {
     private void run(){
 
         JDABuilder bot = new JDABuilder(AccountType.BOT);
-        bot.setToken(WholesomeProperties.getConfigData("token"));
+        bot.setToken(WholesomeProperties.getToken());
         bot.setAutoReconnect(true);
 
         bot.addEventListener(new ReadyListener(),
@@ -47,12 +47,12 @@ public class WholesomeBot {
                 DateFormat dateFormat = new SimpleDateFormat("HH");
                 String date = dateFormat.format(new Date());
 
-                if(date.equals(WholesomeProperties.getConfigData("goodMorningMsgTime"))){
+                if(date.equals(WholesomeProperties.getMorningMessageTime())){
                     System.out.println("LOG: Sending daily good morning message...");
                     goodMorningMsg.sendMessage();
                 }
 
-                if(date.equals(WholesomeProperties.getConfigData("wholesomeMsgTime"))){
+                if(date.equals(WholesomeProperties.getWholesomeMessageTime())){
                     System.out.println("LOG: Sending daily wholesome message...");
                     new DailyWholesomeMsg();
                 }
