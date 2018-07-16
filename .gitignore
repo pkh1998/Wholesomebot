@@ -5,6 +5,7 @@
 libs/
 out/
 .idea/
+.github/
 resources/pictures/*.jpg
 resources/pictures/*.png
 
