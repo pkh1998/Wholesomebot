@@ -1,5 +1,5 @@
 # Wholesomebot
-WholesomeBot is a discord bot designed to spread happiness and wholesomeness. Idea and design by Alexandra, programming by Jason
+WholesomeBot is a discord bot designed to spread happiness and wholesomeness.
 [Click Here](https://github.com/basion96/Wholesomebot/releases/download/v1.1/Wholesomebot_v1.1.zip) to download everything you need for Wholesomebot
 
 ## Table of Contents
@@ -107,3 +107,8 @@ Success! you've now got yourself a sexy bot!
 kk so, getting the channel id is quite simple. Go to User Settings -> Appearance, and then turn on developer mode.
 
 Once developer mode is turned on, right click on the channel you want and click "copy ID". And you're Done!
+
+## Authors
+* Alexandra: Idea & design
+* Jason: Programming & some design
+
