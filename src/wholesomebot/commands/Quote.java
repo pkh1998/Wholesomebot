@@ -2,6 +2,7 @@ package wholesomebot.commands;
 
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import wholesomebot.main.ResponseMessages;
+
 import java.util.Random;
 
 public class Quote extends Command{

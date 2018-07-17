@@ -3,6 +3,7 @@ package wholesomebot.commands;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import wholesomebot.handlers.CommandHandler;
 import wholesomebot.main.WholesomeProperties;
+
 import java.util.HashMap;
 
 public class Help extends Command{

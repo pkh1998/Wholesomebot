@@ -4,8 +4,11 @@ import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
 import net.dv8tion.jda.core.entities.Game;
-import wholesomebot.commands.*;
-import wholesomebot.eventListeners.*;
+import wholesomebot.commands.Command;
+import wholesomebot.eventListeners.GuildJoinListener;
+import wholesomebot.eventListeners.MessageReceivedListener;
+import wholesomebot.eventListeners.ReadyListener;
+
 import javax.security.auth.login.LoginException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

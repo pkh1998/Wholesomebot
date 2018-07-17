@@ -2,6 +2,7 @@ package wholesomebot.commands;
 
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import wholesomebot.main.ResponseMessages;
+
 import java.util.Random;
 
 public class ComplimentMessage extends Command {
@@ -16,7 +17,7 @@ public class ComplimentMessage extends Command {
     @Override
     public void sendMessage(MessageReceivedEvent event) {
         String comp = compliments[new Random().nextInt(compliments.length)];
-        comp = comp.replace("%user%", "<@"+event.getAuthor().getId()+">");
+        comp = comp.replace("%user%", event.getMember().getAsMention());
         event.getChannel().sendMessage(comp).queue();
     }
 }

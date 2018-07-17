@@ -19,7 +19,7 @@ public abstract class Command{
         return commandEnabled;
     }
 
-    public boolean checkRole(String role, Member member){
+    protected boolean checkRole(String role, Member member){
         boolean hasRole = false;
         for(Role memberRole : member.getRoles()){
             if(memberRole.getName().equals(role)){

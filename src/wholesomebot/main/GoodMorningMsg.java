@@ -3,6 +3,7 @@ package wholesomebot.main;
 import net.dv8tion.jda.core.entities.Guild;
 import net.dv8tion.jda.core.entities.Member;
 import net.dv8tion.jda.core.entities.TextChannel;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -20,16 +21,7 @@ public class GoodMorningMsg {
         newMember = false;
         messagedUsers = new ArrayList<>();
         members = new ArrayList<>();
-        for(int i=0; i<guild.getMembers().size(); i++){
-            if(!guild.getMembers().get(i).getUser().getId().equals("203810322425839617") || !guild.getMembers().get(i).getUser().getId().equals("203826445385072640")){
-                members.add(guild.getMembers().get(i));
-            }
-        }
-        for (int i=0; i<members.size(); i++) {
-            if(members.get(i).getUser().getId().equalsIgnoreCase("203810322425839617") || members.get(i).getUser().getId().equalsIgnoreCase("203826445385072640") || members.get(i).getUser().isBot()){
-                members.remove(i);
-            }
-        }
+        members.addAll(guild.getMembers());
     }
 
     public void sendMessage(){
@@ -44,9 +36,9 @@ public class GoodMorningMsg {
             user = members.get(new Random().nextInt(members.size())).getUser().getId();
         }while(hasBeenMessaged(user) || user.equals(WholesomeBot.jda.getSelfUser().getId()));
 
-        WholesomeProperties.saveMorningMessageUser(user);
-
         channel.sendMessage("Good morning <@" + user + ">, have a great day today :blush:").queue();
+
+        WholesomeProperties.saveMorningMessageUser(user);
     }
 
     private boolean hasBeenMessaged(String user){
@@ -62,11 +54,6 @@ public class GoodMorningMsg {
     private void updateMembers(){
         members = new ArrayList<>();
         members.addAll(guild.getMembers());
-        for (int i=0; i<members.size(); i++) {
-            if(members.get(i).getUser().getId().equalsIgnoreCase("203810322425839617") || members.get(i).getUser().getId().equalsIgnoreCase("203826445385072640") || members.get(i).getUser().isBot()){
-                members.remove(i);
-            }
-        }
     }
 
     public static void newMember(){

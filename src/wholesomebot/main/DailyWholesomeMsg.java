@@ -1,6 +1,7 @@
 package wholesomebot.main;
 
 import net.dv8tion.jda.core.entities.TextChannel;
+
 import java.util.Random;
 
 public class DailyWholesomeMsg {

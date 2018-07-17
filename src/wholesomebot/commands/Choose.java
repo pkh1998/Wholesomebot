@@ -1,6 +1,7 @@
 package wholesomebot.commands;
 
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
+
 import java.util.Random;
 
 public class Choose extends Command {

@@ -9,22 +9,8 @@ public final class CommandHandler {
 
     private static HashMap<String, Command> commands;
 
-    public CommandHandler(){
-        commands = new HashMap<>();
-        commands.put("cheermeup", new CheerUpMessage());
-        commands.put("choose", new Choose());
-        commands.put("compliment", new ComplimentMessage());
-        commands.put("help", new Help());
-        commands.put("nerdstats", new NerdStats());
-        commands.put("quote", new Quote());
-        commands.put("recipe", new Recipe());
-        commands.put("wholesomeimg", new WholesomeImage());
-        commands.put("wholesome", new WholesomeMessage());
-        commands.put("prefix", new ChangePrefix());
-    }
-
     public void handleCommand(MessageReceivedEvent event){
-        String msg = event.getMessage().getContentDisplay();
+        String msg = event.getMessage().getContentDisplay().toLowerCase();
         String command = msg.substring(1, (msg.contains(" ")) ? msg.indexOf(" ") : msg.length());
 
         if(commands.containsKey(command)){
@@ -37,5 +23,19 @@ public final class CommandHandler {
 
     public static HashMap<String, Command> getCommands() {
         return commands;
+    }
+
+    public CommandHandler(){
+        commands = new HashMap<>();
+        commands.put("cheermeup", new CheerUpMessage());
+        commands.put("choose", new Choose());
+        commands.put("compliment", new ComplimentMessage());
+        commands.put("help", new Help());
+        commands.put("nerdstats", new NerdStats());
+        commands.put("quote", new Quote());
+        commands.put("recipe", new Recipe());
+        commands.put("wholesomeimg", new WholesomeImage());
+        commands.put("wholesome", new WholesomeMessage());
+        commands.put("prefix", new ChangePrefix());
     }
 }
