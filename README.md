@@ -1,5 +1,5 @@
 # Wholesomebot
-WholesomeBot is a discord bot designed to spread happiness and wholesomeness.
+WholesomeBot is a discord bot designed to spread happiness and wholesomeness, and is continually being updated and added to!
 [Click Here](https://github.com/basion96/Wholesomebot/releases/download/v1.1/Wholesomebot_v1.1.zip) to download everything you need for Wholesomebot
 
 ## Table of Contents
@@ -14,10 +14,10 @@ WholesomeBot is a discord bot designed to spread happiness and wholesomeness.
 ## Commands
 These are all the current commands available for wholesomebot, the default prefix is ! but can be changed to whatever you'd like.
 
-|Commnd [args]|Description|
+|Command [args]|Description|
 | --- | --- |
 |help|Displays all commands and what they do.|
-|Choose [args \| to \| choose] | wholeosmebot will randomly choose one of the options you provide split using \| eg. !choose yes \| no \| maybe.|
+|Choose things \| to \| choose | wholeosmebot will randomly choose one of the options you provide split using \| eg. !choose yes \| no \| maybe.|
 |compliment|Sends a compliment to the user.|
 |cheermeup|Sends a message to try help cheer up the user.|
 |quote|Sends a random inspirational quote.|
@@ -28,9 +28,6 @@ These are all the current commands available for wholesomebot, the default prefi
 
 ## Other Non-Command Things
 Wholesomebot also responds to certain messages, such as "how are you today wholesomebot". Can you discover all the different responses?
-
-## Planned Features
-* tips on how to be more environmental and care for the environment
 
 ## Pictures
 If you want the !wholesomeimg command to work, you're going to have provide your own wholesome memes. I would provide them for you, but yeahhhh the file size would be big haha.
@@ -68,21 +65,18 @@ First things first, make sure you've created a bot user for discord. Dont know h
 Now im gonna assume you've got yourself a bot, ok? Sweet!
  
 #### The config file
-token: Put your bots token here (after the = sign, duh)
+make sure you put all your values after the equals sign (=), Eg. `token = abcdefghijklmnopqrstuvwxyz`
 
-wholesomeMessageTime: The time you want the daily wholesome message to be sent. Uses 24hr time.
-
-morningMessageTime: The time you want the good morning message sent. Uses 24hr time.
-(NOTE: Don't want daily message? just put a number in greater than 24, like 25).
-
-prefix: Put what you want the prefix to be here, default is !
-
-publicChannel: The channel ID of the channel you want to use for the daily messages. (Don't know hot to get the channel ID? [click here!](#channel-id))
-
-welcomeChannel: The channel you want to use for welcoming new members to the channel (can just put the same channel id as public channel here if you want)
-
-adminRole: The name of the role that admins have, default is admin.
-
+|Config Option|Description|
+| --- | --- |
+|token|Put your bots token here|
+|wholesomeMessageTime|The time you want the daily wholesome message to be sent. Uses 24hr time.|
+|morningMessageTime|The time you want the good morning message sent. Uses 24hr time.|
+|prefix|Put what you want the prefix to be here, default is !|
+|publicChannel|The channel ID of the channel you want to use for the daily messages. (Don't know hot to get the channel ID? [click here!](#channel-id))|
+|welcomeChannel|The channel you want to use for welcoming new members to the channel (can just put the same channel id as public channel here if you want)|
+|adminRole|The name of the role that admins have, default is admin.|``````````````````
+(NOTE: Don't want daily message? just ``put a number in greater than 24, like 25).
 You are done configuring the bot, awesome! now all you have to do is run the bot!
 
 #### Running the bot
@@ -107,6 +101,9 @@ Success! you've now got yourself a sexy bot!
 kk so, getting the channel id is quite simple. Go to User Settings -> Appearance, and then turn on developer mode.
 
 Once developer mode is turned on, right click on the channel you want and click "copy ID". And you're Done!
+
+## Libraries Used
+[Java Discord API](https://github.com/DV8FromTheWorld/JDA)
 
 ## Authors
 * Alexandra: Idea & design

@@ -2,7 +2,6 @@ package wholesomebot.handlers;
 
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import wholesomebot.commands.*;
-
 import java.util.HashMap;
 
 public final class CommandHandler {
@@ -37,5 +36,7 @@ public final class CommandHandler {
         commands.put("wholesomeimg", new WholesomeImage());
         commands.put("wholesome", new WholesomeMessage());
         commands.put("prefix", new ChangePrefix());
+        commands.put("selfCare", new SelfCare());
+        commands.put("changelog", new ChangeLog());
     }
 }

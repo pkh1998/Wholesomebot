@@ -1,12 +1,12 @@
 package wholesomebot.utils;
 
-public class Logger {
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 
-    public void log(){
-        String msg = "";
+public final class Logger {
 
+    public static void logEvent(MessageReceivedEvent event){
 
-
-        System.out.print(msg);
     }
+
+    public static void logBotUpdate(String msg){}
 }

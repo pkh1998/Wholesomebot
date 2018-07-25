@@ -1,0 +1,15 @@
+2018-04-21
+v1.2
+This release adds a few new commands
+
+Added
+* selfCare command (!selfcare)
+* changelog
+* view recent changes command (!changelog)
+
+Changed
+* whitespace is now removed from options in the choose command
+
+Removed
+
+----------

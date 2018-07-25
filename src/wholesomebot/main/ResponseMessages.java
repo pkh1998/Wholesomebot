@@ -13,9 +13,10 @@ public final class ResponseMessages {
             howDoYouWorkReplies = getMessages("resources/messages/howDoYouWorkReplies.txt"),
             whatAreYouDoingReplies = getMessages("resources/messages/whatAreYouDoingReplies.txt"),
             yourWelcomes = getMessages("resources/messages/yourWelcomes.txt"),
-            presence = getMessages("resources/presence.txt");
+            presence = getMessages("resources/presence.txt"),
+            selfCareMessages = getMessages("resources/messages/selfCareMessages.txt");
 
-    public static File[] imgs = new File("resources/pictures").listFiles();
+    private static File[] imgs = new File("resources/pictures").listFiles();
     private static Scanner inputStream;
 
     private static String[] getMessages(String path){
@@ -80,6 +81,10 @@ public final class ResponseMessages {
         return presence;
     }
 
+    public static String[] getSelfCareMessages(){
+        return selfCareMessages;
+    }
+
     public static File[] getImgs() {
         return imgs;
     }
@@ -94,6 +99,7 @@ public final class ResponseMessages {
         whatAreYouDoingReplies = getMessages("resources/messages/whatAreYouDoingReplies.txt");
         yourWelcomes = getMessages("resources/messages/yourWelcomes.txt");
         presence = getMessages("resources/presence.txt");
+
         System.out.println("Messages reloaded");
     }
 }

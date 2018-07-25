@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class WholesomeImage extends Command {
 
-    private File[] imgs = ResponseMessages.imgs;
+    private File[] imgs = ResponseMessages.getImgs();
 
     @Override
     public String description() {
