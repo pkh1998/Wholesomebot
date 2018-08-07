@@ -1,6 +1,6 @@
 # Wholesomebot
 WholesomeBot is a discord bot designed to spread happiness and wholesomeness, and is continually being updated and added to!
-[Click Here](https://github.com/basion96/Wholesomebot/releases/download/v1.1/Wholesomebot_v1.1.zip) to download everything you need for Wholesomebot
+[Click Here](https://github.com/basion96/Wholesomebot/releases/download/v1.2/Wholesomebot_Full.zip) to download everything you need for Wholesomebot
 
 ## Table of Contents
 * [Commands](#commands)
@@ -52,7 +52,7 @@ put in the required info into the config file, and BAM! you're done!
 ### Downloading & Installing
 Ok to start off, please make sure you have [java](http://javadl.oracle.com/webapps/download/AutoDL?BundleId=233172_512cd62ec5174c3487ac17c61aaa89e8) installed.
 
-Now that's sorted, what you're going to want to do is actually download wholesomebot [(Here's a link for you)](https://github.com/basion96/Wholesomebot/releases/download/v1.1/Wholesomebot_v1.1.zip).
+Now that's sorted, what you're going to want to do is actually download wholesomebot [(Here's a link for you)](https://github.com/basion96/Wholesomebot/releases/download/v1.2/Wholesomebot_Full.zip).
 
 Now that you have that zip file downloaded, what you're going to want to do is extract those files to where ever you want to run wholesomebot from.
 So you should have a folder with Wholesomebot.jar and and a folder called resources. Tada it's installed.
