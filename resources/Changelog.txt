@@ -1,4 +1,4 @@
-2018-04-21
+2018-08-07
 v1.2
 This release adds a few new commands, a new event listener, and fixes some minor stuff.
 
