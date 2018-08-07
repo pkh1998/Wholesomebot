@@ -31,10 +31,6 @@ public class WholesomeProperties {
         return config.getProperty("prefix");
     }
 
-    public static String getPreviousGoodMorningUser(){
-        return save.getProperty("prevGoodMorningUser");
-    }
-
     public static String getMorningMessageTime(){
         return config.getProperty("morningMessageTime");
     }

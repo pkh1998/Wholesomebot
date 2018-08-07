@@ -6,9 +6,9 @@ import net.dv8tion.jda.core.JDABuilder;
 import net.dv8tion.jda.core.entities.Game;
 import wholesomebot.commands.Command;
 import wholesomebot.eventListeners.GuildJoinListener;
+import wholesomebot.eventListeners.GuildMemberLeaveListener;
 import wholesomebot.eventListeners.MessageReceivedListener;
 import wholesomebot.eventListeners.ReadyListener;
-
 import javax.security.auth.login.LoginException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -18,7 +18,7 @@ public class WholesomeBot {
     public static JDA jda;
     private Timer timer = new Timer();
     private GoodMorningMsg goodMorningMsg;
-    public HashMap<String, Command> commands;
+    private DailyWholesomeMsg dailyWholesomeMsg;
 
     public static void main(String[] args){
         WholesomeBot intFace = new WholesomeBot();
@@ -31,9 +31,11 @@ public class WholesomeBot {
         bot.setToken(WholesomeProperties.getToken());
         bot.setAutoReconnect(true);
 
-        bot.addEventListener(new ReadyListener(),
+        bot.addEventListener(
+                new ReadyListener(),
                 new GuildJoinListener(),
-                new MessageReceivedListener()
+                new MessageReceivedListener(),
+                new GuildMemberLeaveListener()
         );
 
         try{
@@ -43,12 +45,17 @@ public class WholesomeBot {
         }
         jda.getPresence().setGame(Game.playing(ResponseMessages.getPresence()[new Random().nextInt(ResponseMessages.getPresence().length)]));
         goodMorningMsg = new GoodMorningMsg();
+        dailyWholesomeMsg = new DailyWholesomeMsg();
 
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
                 DateFormat dateFormat = new SimpleDateFormat("HH");
                 String date = dateFormat.format(new Date());
+
+                if(date.equals("08")){
+                    jda.getPresence().setGame(Game.playing(ResponseMessages.getPresence()[new Random().nextInt(ResponseMessages.getPresence().length)]));
+                }
 
                 if(date.equals(WholesomeProperties.getMorningMessageTime())){
                     System.out.println("LOG: Sending daily good morning message...");
@@ -57,7 +64,7 @@ public class WholesomeBot {
 
                 if(date.equals(WholesomeProperties.getWholesomeMessageTime())){
                     System.out.println("LOG: Sending daily wholesome message...");
-                    new DailyWholesomeMsg();
+                    dailyWholesomeMsg.sendDailyMessage();
                 }
 
             }

@@ -1,15 +1,19 @@
 2018-04-21
 v1.2
-This release adds a few new commands
+This release adds a few new commands, a new event listener, and fixes some minor stuff.
 
 Added
 * selfCare command (!selfcare)
 * changelog
 * view recent changes command (!changelog)
+* ability to enable and disable commands (!cmd [command name] [enable/disable]) (admin only)
+* GuildMemberLeaveListener, listens for when someone leaves the discord server
+* members that leave guild will be removed from good morning message list
+* wholesomebot will now change what its doing each day at 8am
+* Added more messages that wholesomebot will respond to
 
 Changed
 * whitespace is now removed from options in the choose command
-
-Removed
+* new members are properly added to the good morning message list
 
 ----------

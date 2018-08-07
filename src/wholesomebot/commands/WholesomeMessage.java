@@ -18,4 +18,7 @@ public class WholesomeMessage extends Command {
     public void sendMessage(MessageReceivedEvent event) {
         event.getChannel().sendMessage(wholesomeMsgs[new Random().nextInt(wholesomeMsgs.length)]).queue();
     }
+
+    public static class GuildLeaveListener {
+    }
 }

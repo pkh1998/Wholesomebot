@@ -13,7 +13,8 @@ public final class CommandHandler {
         String command = msg.substring(1, (msg.contains(" ")) ? msg.indexOf(" ") : msg.length());
 
         if(commands.containsKey(command)){
-            commands.get(command).sendMessage(event);
+            if(commands.get(command).isEnabled())
+                commands.get(command).sendMessage(event);
         }
         else{
             event.getChannel().sendMessage("Sorry, i cant seem to find that command :confused: ").queue();
@@ -30,7 +31,7 @@ public final class CommandHandler {
         commands.put("choose", new Choose());
         commands.put("compliment", new ComplimentMessage());
         commands.put("help", new Help());
-        commands.put("nerdstats", new NerdStats());
+        commands.put("stats", new Stats());
         commands.put("quote", new Quote());
         commands.put("recipe", new Recipe());
         commands.put("wholesomeimg", new WholesomeImage());
@@ -38,5 +39,6 @@ public final class CommandHandler {
         commands.put("prefix", new ChangePrefix());
         commands.put("selfCare", new SelfCare());
         commands.put("changelog", new ChangeLog());
+        commands.put("cmd", new CommandEnabler());
     }
 }

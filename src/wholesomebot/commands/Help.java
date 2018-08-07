@@ -19,7 +19,7 @@ public class Help extends Command{
 
         //iterates though the command Hashmap to retrieve all the command names (Keys) and the command descriptions
         for(HashMap.Entry<String, Command> command : CommandHandler.getCommands().entrySet()){
-            msg.append("**").append(command.getKey()).append("**").append(": ").append(command.getValue().description()).append("\n\n");
+            msg.append("**").append(command.getKey()).append("**").append(": ").append("Enabled - ").append(command.getValue().isEnabled()).append(", ").append(command.getValue().description()).append("\n\n");
         }
         event.getChannel().sendMessage(msg.toString()).queue();
     }

@@ -21,7 +21,7 @@ public class MessageHandler {
 
         for(Map.Entry<Pattern, String> entry : responses.entrySet()){
             if(entry.getKey().matcher(msg).find()){
-                event.getChannel().sendMessage(editResponse(entry.getValue(), event.getAuthor().getName())).queue();
+                event.getChannel().sendMessage(editResponse(entry.getValue(), event.getAuthor().getAsMention())).queue();
                 break;
             }
         }
@@ -104,8 +104,58 @@ public class MessageHandler {
 
         //if message is a variation of 'how do you work wholesomebot'
         responses.put(
-                Pattern.compile("how (exactly)? do you work\\??"),
+                Pattern.compile("how (exactly\\s*)*do you work\\?*"),
                 "%howDoYouWork%"
+        );
+
+        responses.put(
+                Pattern.compile("are (you|u) (an|a) (ai|AI|a.i.|A.I.)"),
+                "haha not at all. Unfortunately i cant exactly \"think for myself\", every response i give is predetermined and choosen by my programmer. Type the same thing again to see that (spoilers: i\'ll say this again haha)"
+        );
+
+        responses.put(
+                Pattern.compile("(you|u|your|you're|youre) (look|looking) (great|lovely|beautiful|amazing|cute|adorable|nice|good) (right now|atm|today|at the moment)?"),
+                "Awwwww thanks %user%, you\'re too kind :blush: You\'re looking amazing as always :heart_eyes:"
+        );
+
+        responses.put(
+                Pattern.compile("(you are|you're|your|youre|ur|u|you) cute"),
+                "you\'re cuter %user% :blush: "
+        );
+
+        responses.put(
+                Pattern.compile("(you are|you're|your|youre|ur|u|you) beautiful"),
+                "you\'re even more beautiful %user% :blush: "
+        );
+
+        responses.put(
+                Pattern.compile("(you are|you're|your|youre|ur|u|you) adorable"),
+                "you\'re more adorable %user% :blush: "
+        );
+
+        responses.put(
+                Pattern.compile("(you are|you're|your|youre|ur|u|you) (to|2|too)* (kind|nice|good|wholesome)"),
+                "I always try my best to be the best i can be to everyone :blush:"
+        );
+
+        responses.put(
+                Pattern.compile("(good)?\\s*(morning|mornin)"),
+                "Good morning :blush:"
+        );
+
+        responses.put(
+                Pattern.compile("(good)?\\s*(evening|afternoon)"),
+                "Good afternoon %user% :blush: How was your day today?"
+        );
+
+        responses.put(
+                Pattern.compile("how (did|was) (you|u|your|ur) sleep\\?*"),
+                "I was awake all night again :confused: That\'s the annoying thing about being a computer, You don\'t tend to get much sleep. Thanks for asking though :blush: "
+        );
+
+        responses.put(
+                Pattern.compile("(good)?\\s*night"),
+                "Good night %user% :blush:, have a good sleep :kissing_heart: "
         );
     }
 }

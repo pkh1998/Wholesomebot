@@ -14,7 +14,8 @@ public final class ResponseMessages {
             whatAreYouDoingReplies = getMessages("resources/messages/whatAreYouDoingReplies.txt"),
             yourWelcomes = getMessages("resources/messages/yourWelcomes.txt"),
             presence = getMessages("resources/presence.txt"),
-            selfCareMessages = getMessages("resources/messages/selfCareMessages.txt");
+            selfCareMessages = getMessages("resources/messages/selfCareMessages.txt"),
+            relationshipAdvice = getMessages("resources/messages/relationshipAdvice.txt");
 
     private static File[] imgs = new File("resources/pictures").listFiles();
     private static Scanner inputStream;
