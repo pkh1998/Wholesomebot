@@ -1,5 +1,5 @@
 # Wholesomebot
-WholesomeBot is a discord bot designed to spread happiness and wholesomeness, and is continually being updated and added to!
+WholesomeBot is a discord bot designed to spread happiness and wholesomeness to your discord server. It is continually being updated and added to :)
 [Click Here](https://github.com/basion96/Wholesomebot/releases/download/v1.2/Wholesomebot_Full.zip) to download everything you need for Wholesomebot
 
 ## Table of Contents
@@ -108,6 +108,6 @@ Once developer mode is turned on, right click on the channel you want and click 
 [Java Discord API](https://github.com/DV8FromTheWorld/JDA)
 
 ## Authors
-* Alexandra: Idea & design
-* Jason: Programming & some design
+* Alexandra: Idea & command idea's
+* Jason: Programming, design, and command idea's
 
