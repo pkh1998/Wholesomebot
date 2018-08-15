@@ -78,6 +78,7 @@ make sure you put all your values after the equals sign (=), Eg. `token = abcdef
 |adminRole|The name of the role that admins have, default is admin.|
 
 (NOTE: Don't want daily message? just put a number in greater than 24, like 25).
+
 You are done configuring the bot, awesome! now all you have to do is run the bot!
 
 #### Running the bot
