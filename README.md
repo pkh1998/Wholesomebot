@@ -75,8 +75,9 @@ make sure you put all your values after the equals sign (=), Eg. `token = abcdef
 |prefix|Put what you want the prefix to be here, default is !|
 |publicChannel|The channel ID of the channel you want to use for the daily messages. (Don't know hot to get the channel ID? [click here!](#channel-id))|
 |welcomeChannel|The channel you want to use for welcoming new members to the channel (can just put the same channel id as public channel here if you want)|
-|adminRole|The name of the role that admins have, default is admin.|``````````````````
-(NOTE: Don't want daily message? just ``put a number in greater than 24, like 25).
+|adminRole|The name of the role that admins have, default is admin.|
+
+(NOTE: Don't want daily message? just put a number in greater than 24, like 25).
 You are done configuring the bot, awesome! now all you have to do is run the bot!
 
 #### Running the bot
