@@ -1,7 +1,10 @@
-package wholesomebot.main;
+package wholesomebot.main.GoodMorningMesage;
 
 import net.dv8tion.jda.core.entities.TextChannel;
 import net.dv8tion.jda.core.entities.User;
+import wholesomebot.main.WholesomeBot;
+import wholesomebot.main.WholesomeProperties;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
