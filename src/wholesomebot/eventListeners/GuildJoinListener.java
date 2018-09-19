@@ -3,8 +3,8 @@ package wholesomebot.eventListeners;
 import net.dv8tion.jda.core.entities.TextChannel;
 import net.dv8tion.jda.core.events.guild.member.GuildMemberJoinEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
-import wholesomebot.main.GoodMorningMesage.GoodMorningMsg;
-import wholesomebot.main.WholesomeProperties;
+import wholesomebot.core.GoodMorningMsg;
+import wholesomebot.core.WholesomeProperties;
 
 public class GuildJoinListener extends ListenerAdapter {
 

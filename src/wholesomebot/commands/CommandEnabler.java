@@ -2,7 +2,7 @@ package wholesomebot.commands;
 
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import wholesomebot.handlers.CommandHandler;
-import wholesomebot.main.WholesomeProperties;
+import wholesomebot.core.WholesomeProperties;
 
 public class CommandEnabler extends Command {
     @Override

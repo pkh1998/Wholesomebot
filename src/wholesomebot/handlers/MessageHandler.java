@@ -1,7 +1,8 @@
 package wholesomebot.handlers;
 
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
-import wholesomebot.main.ResponseMessages;
+import wholesomebot.commands.Recipe;
+import wholesomebot.core.ResponseMessages;
 
 import java.util.HashMap;
 import java.util.Map;

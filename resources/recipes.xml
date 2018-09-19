@@ -49,7 +49,7 @@
         </additionalNotes>
     </recipe>
 
-    <recipe cmd="bssmoothiebowl">
+    <recipe cmd="smoothiebowl">
         <dishName>Banana &amp; Strawberry Smoothie Bowl</dishName>
         <description></description>
         <yield></yield>

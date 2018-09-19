@@ -1,4 +1,4 @@
-package wholesomebot.main;
+package wholesomebot.core;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -15,7 +15,7 @@ public final class ResponseMessages {
             yourWelcomes = getMessages("resources/messages/yourWelcomes.txt"),
             presence = getMessages("resources/presence.txt"),
             selfCareMessages = getMessages("resources/messages/selfCareMessages.txt"),
-            relationshipAdvice = getMessages("resources/messages/relationshipAdvice.txt");
+            goodMorningMessages = getMessages("resources/messages/goodMorningMessages.txt");
 
     private static File[] imgs = new File("resources/pictures").listFiles();
     private static Scanner inputStream;
@@ -86,6 +86,10 @@ public final class ResponseMessages {
         return selfCareMessages;
     }
 
+    public static String[] getGoodMorningMessages(){
+        return goodMorningMessages;
+    }
+
     public static File[] getImgs() {
         return imgs;
     }
@@ -100,6 +104,7 @@ public final class ResponseMessages {
         whatAreYouDoingReplies = getMessages("resources/messages/whatAreYouDoingReplies.txt");
         yourWelcomes = getMessages("resources/messages/yourWelcomes.txt");
         presence = getMessages("resources/presence.txt");
+        goodMorningMessages = getMessages("resources/messages/goodMorningMessages.txt");
 
         System.out.println("Messages reloaded");
     }

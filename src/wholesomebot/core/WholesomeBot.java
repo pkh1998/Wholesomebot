@@ -1,4 +1,4 @@
-package wholesomebot.main;
+package wholesomebot.core;
 
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDA;
@@ -8,7 +8,6 @@ import wholesomebot.eventListeners.GuildJoinListener;
 import wholesomebot.eventListeners.GuildMemberLeaveListener;
 import wholesomebot.eventListeners.MessageReceivedListener;
 import wholesomebot.eventListeners.ReadyListener;
-import wholesomebot.main.GoodMorningMesage.GoodMorningMsg;
 
 import javax.security.auth.login.LoginException;
 import java.text.DateFormat;
@@ -59,12 +58,10 @@ public class WholesomeBot {
                 }
 
                 if(date.equals(WholesomeProperties.getMorningMessageTime())){
-                    System.out.println("LOG: Sending daily good morning message...");
                     goodMorningMsg.sendMessage();
                 }
 
                 if(date.equals(WholesomeProperties.getWholesomeMessageTime())){
-                    System.out.println("LOG: Sending daily wholesome message...");
                     dailyWholesomeMsg.sendDailyMessage();
                 }
 

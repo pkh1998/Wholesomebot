@@ -1,4 +1,4 @@
-package wholesomebot.main;
+package wholesomebot.core;
 
 import java.io.*;
 import java.util.Properties;

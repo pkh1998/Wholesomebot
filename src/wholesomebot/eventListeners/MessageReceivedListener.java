@@ -5,7 +5,7 @@ import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 import wholesomebot.handlers.CommandHandler;
 import wholesomebot.handlers.MessageHandler;
-import wholesomebot.main.WholesomeProperties;
+import wholesomebot.core.WholesomeProperties;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

@@ -1,7 +1,7 @@
 package wholesomebot.commands;
 
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
-import wholesomebot.main.WholesomeProperties;
+import wholesomebot.core.WholesomeProperties;
 
 public class ChangePrefix extends Command{
     @Override

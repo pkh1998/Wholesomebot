@@ -1,0 +1,5 @@
+Good morning %user%, how are you today?
+Morning %user%, have a great day today :blush:
+Good morning %user%, have a great day today :blush:
+Good morning %user%,  hope you have a wonderful day! :blush:
+Morning %user%, hope you have a wonderful day :blush:
