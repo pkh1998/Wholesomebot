@@ -1,4 +1,4 @@
-package wholesomebot.main;
+package wholesomebot.core;
 
 import net.dv8tion.jda.core.entities.TextChannel;
 import java.util.Random;

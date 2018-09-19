@@ -1,4 +1,21 @@
+<<<<<<< HEAD
 2018-08-07
+=======
+2018-09-19
+v1.3
+This release adds more commands and fixes some bugs like the goodmorning message stopping once everyone has been messaged once
+
+Added
+* morningmessage command, allows you to join/leave the list to be randomly messaged in the morning by wholesomebot (!morningmessage [join/leave])
+* Theres now more than 1 good morning message type! Down are the days of the same message all the time!! (tbh honest though there's still not that many different ones, ill add more eventually)
+
+Changed
+* Wholesomebot will no longer stop good morning messages once everyone has been messaged once
+
+----------
+
+2018-04-21
+>>>>>>> 1.3
 v1.2
 This release adds a few new commands, a new event listener, and fixes some minor stuff.
 

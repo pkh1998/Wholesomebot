@@ -24,7 +24,7 @@ These are all the current commands available for wholesomebot, the default prefi
 |recipe|Displays all the recipe commands and descriptions that are in the recipe.xml.|
 |wholesomeimg|Sends a wholesome image (make sure you add pictures in the resources/pictures file).|
 |wholesome|Sends a random wholesome message.|
-|nerdstats|Displays a bunch of info about wholesomebot and the system its running on.|
+|stats|Displays a bunch of info about wholesomebot and the system its running on.|
 
 ## Other Non-Command Things
 Wholesomebot also responds to certain messages, such as "how are you today wholesomebot". Can you discover all the different responses?
@@ -76,7 +76,10 @@ make sure you put all your values after the equals sign (=), Eg. `token = abcdef
 |publicChannel|The channel ID of the channel you want to use for the daily messages. (Don't know hot to get the channel ID? [click here!](#channel-id))|
 |welcomeChannel|The channel you want to use for welcoming new members to the channel (can just put the same channel id as public channel here if you want)|
 |adminRole|The name of the role that admins have, default is admin.|
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1.3
 (NOTE: Don't want daily message? just put a number in greater than 24, like 25).
 
 You are done configuring the bot, awesome! now all you have to do is run the bot!
