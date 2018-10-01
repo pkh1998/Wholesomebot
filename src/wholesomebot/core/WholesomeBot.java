@@ -4,10 +4,16 @@ import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
 import net.dv8tion.jda.core.entities.Game;
-import wholesomebot.eventListeners.GuildJoinListener;
+
+import wholesomebot.eventListeners.GuildMemberJoinListener;
 import wholesomebot.eventListeners.GuildMemberLeaveListener;
 import wholesomebot.eventListeners.MessageReceivedListener;
 import wholesomebot.eventListeners.ReadyListener;
+import wholesomebot.handlers.CommandHandler;
+import wholesomebot.handlers.MessageHandler;
+import wholesomebot.utils.TerminalListener;
+import wholesomebot.utils.logger.LogLevel;
+import wholesomebot.utils.logger.Logger;
 
 import javax.security.auth.login.LoginException;
 import java.text.DateFormat;
@@ -33,7 +39,7 @@ public class WholesomeBot {
 
         bot.addEventListener(
                 new ReadyListener(),
-                new GuildJoinListener(),
+                new GuildMemberJoinListener(),
                 new MessageReceivedListener(),
                 new GuildMemberLeaveListener()
         );
@@ -41,9 +47,13 @@ public class WholesomeBot {
         try{
             jda = bot.buildBlocking();
         }catch(LoginException | InterruptedException e){
-            e.printStackTrace();
+            Logger.log(LogLevel.ERROR, e.toString());
         }
+
+        //get random from wither listening playing or watching, use random 1-3, then random from the list of stuff
         jda.getPresence().setGame(Game.playing(ResponseMessages.getPresence()[new Random().nextInt(ResponseMessages.getPresence().length)]));
+
+
         goodMorningMsg = new GoodMorningMsg();
         dailyWholesomeMsg = new DailyWholesomeMsg();
 
@@ -67,5 +77,9 @@ public class WholesomeBot {
 
             }
         }, 0,3600000);
+
+        TerminalListener terminalListener = new TerminalListener();
+        Thread t = new Thread(terminalListener);
+        t.start();
     }
 }

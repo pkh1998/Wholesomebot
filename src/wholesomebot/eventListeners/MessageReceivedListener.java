@@ -6,29 +6,23 @@ import net.dv8tion.jda.core.hooks.ListenerAdapter;
 import wholesomebot.handlers.CommandHandler;
 import wholesomebot.handlers.MessageHandler;
 import wholesomebot.core.WholesomeProperties;
-
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import wholesomebot.utils.logger.LogLevel;
+import wholesomebot.utils.logger.Logger;
 
 public class MessageReceivedListener extends ListenerAdapter {
 
-    private DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
-    private CommandHandler commandHandler = new CommandHandler();
     private MessageHandler messageHandler = new MessageHandler();
+    private CommandHandler commandHandler = new CommandHandler();
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
 
-        String msg = event.getMessage().getContentDisplay();
-
-        //Logging the message
-        System.out.println(dateFormat.format(new Date()) + " - " + (event.getMessage().isFromType(ChannelType.PRIVATE) ? "Pri" : "Pub") + " - " + event.getAuthor().getName() + ": " + event.getMessage().getContentDisplay());
+        Logger.log(LogLevel.INFO, (event.isFromType(ChannelType.PRIVATE)) ? "Private" : "Public" + " - " + event.getAuthor().getName() + ": " + event.getMessage().getContentDisplay());
 
         if(event.getAuthor().isBot()){ //if the message event came from a bot
             return;
         }
-        else if(msg.startsWith(WholesomeProperties.getPrefix())){ //if the message is a command, starting with the assigned prefix
+        else if(event.getMessage().getContentDisplay().startsWith(WholesomeProperties.getPrefix())){ //if the message is a command, starting with the assigned prefix
             commandHandler.handleCommand(event);
         }
         else{ //if the message is just a standard message

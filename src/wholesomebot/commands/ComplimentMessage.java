@@ -11,7 +11,7 @@ public class ComplimentMessage extends Command {
 
     @Override
     public String description() {
-        return "I'll send you a compliment to make you happy.";
+        return "I'll send you a compliment to make you HappyMeter.";
     }
 
     @Override

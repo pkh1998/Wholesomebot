@@ -1,6 +1,8 @@
 package wholesomebot.commands;
 
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
+import wholesomebot.utils.logger.LogLevel;
+import wholesomebot.utils.logger.Logger;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -19,7 +21,7 @@ public class ChangeLog extends Command {
         try{
             stream = new Scanner(new File("resources/Changelog.txt"));
         }catch(FileNotFoundException e){
-            System.out.println("Could not find changelog.txt :/");
+            Logger.log(LogLevel.ERROR, "Could not find changelog.txt");
         }
         while(stream.hasNextLine()){
             String line = stream.nextLine();

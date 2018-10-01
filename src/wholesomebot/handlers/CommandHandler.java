@@ -41,5 +41,6 @@ public final class CommandHandler {
         commands.put("changelog", new ChangeLog());
         commands.put("cmd", new CommandEnabler());
         commands.put("morningmessage", new MorningMessage());
+        commands.put("reloadMessages", new ReloadResponseMessages());
     }
 }

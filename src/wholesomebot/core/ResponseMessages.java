@@ -1,21 +1,24 @@
 package wholesomebot.core;
 
+import wholesomebot.utils.logger.LogLevel;
+import wholesomebot.utils.logger.Logger;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public final class ResponseMessages {
     private static String[] wholesomeMsgs = getMessages("resources/messages/wholesomeMessages.txt"),
-            cheerUpMessages = getMessages("resources/messages/cheerUpMessages.txt"),
-            compliments = getMessages("resources/messages/compliments.txt"),
-            quotes = getMessages("resources/messages/quotes.txt"),
-            howAreYouReplies = getMessages("resources/messages/howAreYouReplies.txt"),
-            howDoYouWorkReplies = getMessages("resources/messages/howDoYouWorkReplies.txt"),
-            whatAreYouDoingReplies = getMessages("resources/messages/whatAreYouDoingReplies.txt"),
-            yourWelcomes = getMessages("resources/messages/yourWelcomes.txt"),
-            presence = getMessages("resources/presence.txt"),
-            selfCareMessages = getMessages("resources/messages/selfCareMessages.txt"),
-            goodMorningMessages = getMessages("resources/messages/goodMorningMessages.txt");
+                            cheerUpMessages = getMessages("resources/messages/cheerUpMessages.txt"),
+                            compliments = getMessages("resources/messages/compliments.txt"),
+                            quotes = getMessages("resources/messages/quotes.txt"),
+                            howAreYouReplies = getMessages("resources/messages/howAreYouReplies.txt"),
+                            howDoYouWorkReplies = getMessages("resources/messages/howDoYouWorkReplies.txt"),
+                            whatAreYouDoingReplies = getMessages("resources/messages/whatAreYouDoingReplies.txt"),
+                            yourWelcomes = getMessages("resources/messages/yourWelcomes.txt"),
+                            presence = getMessages("resources/presence.txt"),
+                            selfCareMessages = getMessages("resources/messages/selfCareMessages.txt"),
+                            goodMorningMessages = getMessages("resources/messages/goodMorningMessages.txt");
 
     private static File[] imgs = new File("resources/pictures").listFiles();
     private static Scanner inputStream;
@@ -25,7 +28,7 @@ public final class ResponseMessages {
         try{
             inputStream = new Scanner(new File(path));
         }catch(FileNotFoundException e){
-            System.out.println("File \""+path+"\" not found");
+            Logger.log(LogLevel.ERROR, "File \""+path+"\" not found");
         }
         while(inputStream.hasNextLine()){
             String line = inputStream.nextLine();
@@ -34,7 +37,6 @@ public final class ResponseMessages {
                 msgs[msgs.length-1] = line;
             }
         }
-        System.out.println("Array: " + path.substring(path.lastIndexOf("/")+1,path.length()-4) + " Successfully read");
         return msgs;
     }
 

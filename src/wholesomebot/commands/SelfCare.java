@@ -11,7 +11,7 @@ public class SelfCare extends Command{
 
     @Override
     public String description() {
-        return "Some tips and ideas on how to care for yourself and be happy.";
+        return "Some tips and ideas on how to care for yourself and be HappyMeter.";
     }
 
     @Override

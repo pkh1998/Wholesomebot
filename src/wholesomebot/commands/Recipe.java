@@ -7,6 +7,8 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 import wholesomebot.core.WholesomeProperties;
+import wholesomebot.utils.logger.LogLevel;
+import wholesomebot.utils.logger.Logger;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -132,7 +134,7 @@ public class Recipe extends Command {
             doc.getDocumentElement().normalize();
             nList = doc.getElementsByTagName("recipe");
         }catch(ParserConfigurationException | SAXException | IOException e){
-            e.printStackTrace();
+            Logger.log(LogLevel.ERROR, e.toString());
         }
 
         return nList;
